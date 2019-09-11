@@ -1,0 +1,9 @@
+{
+  "name": "poc-visualizer",
+  "version": "1.0.0",
+  "author": "rahul garg",
+  "license": "MIT",
+  "dependencies": {
+    "js2py": "^1.0.3-3"
+  }
+}
