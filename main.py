@@ -9,7 +9,7 @@ import os
 from flask import Flask
 import js2py
 
-API = os.environ['API']
+API = "https://alamo.helium.foundation/api"
 animalhash = js2py.require('angry-purple-tiger')
 
 app = Flask(__name__)
@@ -97,4 +97,4 @@ def index():
     return folium_map._repr_html_()
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(port=8080, debug=True)
