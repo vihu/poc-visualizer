@@ -74,9 +74,9 @@ def add_markers(map_obj, hotspots):
     hotspot_addresses = [i['address'] for i in hotspots]
     hotspot_names = [animalhash(addr) for addr in hotspot_addresses]
     hotspot_locations = [(hotspot['lat'], hotspot['lng']) for hotspot in hotspots]
-    rx_pool = Pool(200)
+    rx_pool = Pool(10)
     hotspot_receipts = [rx_pool.apply(get_receipts, args=(addr, )) for addr in hotspot_addresses]
-    wx_pool = Pool(200)
+    wx_pool = Pool(10)
     hotspot_witnesses = [wx_pool.apply(get_witnesses, args=(addr, )) for addr in hotspot_addresses]
     data = zip(hotspot_names, hotspot_locations, hotspot_receipts, hotspot_witnesses)
 
